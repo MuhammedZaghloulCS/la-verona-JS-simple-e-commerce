@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shopping Cart</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Styles -->
+    <style>
+      body {
+        background: linear-gradient(120deg, #6a11cb, #2575fc);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .cart-header {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .cart-summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding: 1rem 1.5rem;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .cart-table {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+      }
+
+      .cart-table thead {
+        background-color: #343a40;
+        color: #ffffff;
+      }
+
+      .cart-table tbody tr {
+        transition: all 0.2s;
+      }
+
+      .cart-table tbody tr:hover {
+        background-color: #f1f3f5;
+      }
+
+      .card-product {
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .card-product img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .size-select {
+        width: 100px;
+        margin-top: 0.5rem;
+      }
+
+      .btn-update {
+        background-color: #0d6efd;
+        color: #fff;
+      }
+
+      .btn-update:hover {
+        background-color: #0b5ed7;
+        color: #fff;
+      }
+
+      .subtotal-card {
+        background-color: #ffffff;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .btn-checkout {
+        background-color: #198754;
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .btn-checkout:hover {
+        background-color: #157347;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container my-4">
+      <!-- Header -->
+      <div class="cart-header text-light">Your Shopping Cart</div>
+
+      <!-- Cart Summary -->
+      <div class="cart-summary shadow">
+        <div id="cartCount" class="text-muted fw-semibold"></div>
+        <div>
+          Expected Delivery:
+          <span id="delivery-date" class="text-success fw-bold"></span>
+        </div>
+      </div>
+
+      <!-- Cart Table -->
+      <div class="cart-table table-responsive shadow">
+        <table class="table align-middle mb-0">
+          <thead>
+            <tr>
+              <th class="fst-italic">Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+
+             
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="cartBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Subtotal & Actions -->
+      <div
+        class="d-flex justify-content-between align-items-center mt-4 subtotal-card shadow"
+      >
+        <a href="index.html" class="btn btn-dark px-4 py-2"
+          >Continue Shopping</a
+        >
+        <div class="subtotal-card text-end">
+          <p class="fw-bold mb-3 fs-5">
+            Sub Total:
+            <span id="subTotal" class="text-success fw-bolder">0$</span>
+          </p>
+          <a href="order_confirmation.html" class="btn btn-checkout px-5 py-2">
+            Go to Checkout
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/JS/cart.js"></script>
+  </body>
+</html>

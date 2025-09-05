@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body style="background: linear-gradient(120deg, #6a11cb, #2575fc)">
+    <div class="profile-card">
+      <h2>User Profile</h2>
+      <form id="userForm">
+        <!-- Basic Info -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" />
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" name="phone" />
+          </div>
+        </div>
+
+        <!-- Address -->
+        <h3>Address</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" id="street" name="street" />
+          </div>
+          <div class="form-group">
+            <label for="number">Number</label>
+            <input type="number" id="number" name="number" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" />
+          </div>
+          <div class="form-group">
+            <label for="zipcode">Zip Code</label>
+            <input type="text" id="zipcode" name="zipcode" />
+          </div>
+        </div>
+
+        <!-- Geolocation -->
+        <h3>Geolocation</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="lat">Latitude</label>
+            <input type="text" id="lat" name="lat" disabled />
+          </div>
+          <div class="form-group">
+            <label for="long">Longitude</label>
+            <input type="text" id="long" name="long" disabled />
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <button type="submit" id="btn-save" class="btn-save">
+            Save Changes
+          </button>
+          <div class="errs">
+            <p id="username-err" class="text-danger fs-4 d-none">
+              User Name is not Valid
+            </p>
+            <p id="email-err" class="text-danger fs-4 d-none">
+              Email is not Valid
+            </p>
+            <p id="phone-err" class="text-danger fs-4 d-none">
+              Phone Number is not Valid
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="assets/JS/profile.js" type="module"></script>
+  </body>
+</html>
