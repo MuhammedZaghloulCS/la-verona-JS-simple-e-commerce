@@ -13,7 +13,7 @@ export class Events {
     this.nav = document.getElementsByClassName("main-nav")[0];
     this.backToTop = document.getElementById("backToTop");
     this.logout = document.getElementById("logout");
-    //account
+    this.btnCart = document.getElementsByClassName("btn-cart")[0]; //account
     this.account = document.getElementsByClassName("logined")[0];
     this.usernameOrLogin = document.getElementById("username-or-login");
     this.#setEvents();
@@ -24,6 +24,19 @@ export class Events {
   }
 
   #setEvents() {
+    if (JSON.parse(localStorage.getItem("user")).newlogin)
+      this.logout.classList.remove("d-none");
+    else this.logout.classList.add("d-none");
+
+    this.btnCart.addEventListener("click", () => {
+      if (
+        localStorage.getItem("token") ||
+        JSON.parse(localStorage.getItem("user")).newlogin
+      )
+        location.assign("cart.html");
+      else location.assign("sign.html");
+    });
+
     if (localStorage.getItem("user"))
       this.usernameOrLogin.textContent = JSON.parse(
         localStorage.getItem("user")
@@ -36,10 +49,7 @@ export class Events {
       } else location.assign("sign.html");
     });
 
-    if (
-      !localStorage.getItem("token") &&
-      JSON.parse(localStorage.getItem("user")).newlogin
-    ) {
+    if (!localStorage.getItem("token")) {
       this.logout.classList.add("d-none");
     } else this.logout.classList.remove("d-none");
 
