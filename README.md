@@ -53,6 +53,7 @@ La Verona serves as both a **learning project** and a **starter model** for buil
 
 ## 📂 Project Structure
 
+````
 La-Verona/
 │── index.html # Home page (products, slider, filters)
 │── profile.html # User profile page
@@ -76,14 +77,14 @@ La-Verona/
 │ └── order_confirmation.js # Renders final order summary & clears cart
 │
 ├── README.md # Project documentation
-└── LICENSE # License file (MIT recommended)
+└── LICENSE # License file (MIT recommended)```
 
 ## 🚀 Setup & Usage
 
 1. Clone this repository:
    ```bash
    git clone https://github.com/MuhammedZaghloulCS/la-verona-JS-simple-e-commerce.git
-   ```
+````
 
 ## 🚀 Getting Started
 
